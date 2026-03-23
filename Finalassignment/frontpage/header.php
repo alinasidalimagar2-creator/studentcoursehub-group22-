@@ -5,8 +5,8 @@
 <header class="main-header">
   <div class="header-container">
     <div class="header-left">
-      <a href="index.php" class="brand-logo">🎓 Student Course Hub</a>
-      <a href="index.php" class="nav-link active">Home</a>
+      <a href="home.php" class="brand-logo">🎓 Student Course Hub</a>
+      <a href="home.php" class="nav-link active">Home</a>
     </div>
     <div class="header-right">
       <a href="login.php" class="nav-btn">Login</a>
@@ -17,7 +17,7 @@
 
   <!-- Mobile menu (no UG/PG here either) -->
   <nav class="mobile-menu">
-    <a href="index.php">Home</a>
+    <a href="home.php">Home</a>
     <a href="login.php">Login</a>
   </nav>
 </header>
