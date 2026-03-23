@@ -1,0 +1,159 @@
+/* ==============================
+   BODY
+============================== */
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to right, #182848, #4b6cb7);
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==============================
+   HEADER
+============================== */
+h2 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2rem;
+    color: #f4f1f1;
+    position: relative;
+    top: 0;
+}
+
+/* ==============================
+   Fancy Back Button
+============================== */
+a.back-btn {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 18px;
+    background: #3498db;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+a.back-btn:hover {
+    background: #21618c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* ==============================
+   FORM STYLING
+============================== */
+form {
+    width: 400px;
+    max-width: 90%;
+    margin: 100px auto 40px auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+}
+
+label {
+    font-weight: bold;
+    color: #f8f5f5;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+}
+
+input[readonly],
+textarea[readonly],
+select:disabled {
+    background-color: #b14a4a;
+    color: #777;
+}
+
+/* ==============================
+   SELECT Dropdown with Visible Arrow
+============================== */
+select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    box-sizing: border-box;
+    -webkit-appearance: menulist;
+    -moz-appearance: menulist;
+    appearance: menulist;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23333'%3E%3Cpath d='M4 6l4 4 4-4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+select option {
+    background-color: #fff;
+    color: #333;
+}
+
+/* ==============================
+   BUTTONS
+============================== */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #21618c;
+}
+
+/* ==============================
+   SUCCESS MESSAGE
+============================== */
+.success {
+    width: 400px;
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #2ecc71;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+@media screen and (max-width: 600px) {
+    form, .success {
+        width: 90%;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,132 @@
+<?php
+// frontpage/index.php
+if (session_status() === PHP_SESSION_NONE) { session_start(); }
+
+/**
+ * Robust config loader:
+ * Tries several relative + absolute paths to your admin portal config.
+ * Shows which path succeeded (green) or all tried paths (red) if none worked.
+ */
+$tried  = [];
+$loaded = false;
+
+$candidates = [
+    // Most likely (frontpage sibling of "admin portal")
+    __DIR__ . '/../admin portal/config.php',
+    dirname(__DIR__) . '/admin portal/config.php',
+
+    // If frontpage/ is nested deeper
+    __DIR__ . '/../../admin portal/config.php',
+
+    // Project-root fallback
+    dirname(__DIR__) . '/config.php',
+    __DIR__ . '/../config.php',
+
+    // Legacy shim if you added Finalassignment/config/db.php
+    __DIR__ . '/../config/db.php',
+
+    // Absolute path from your messages
+    'C:/xampp/htdocs/Finalassignment/admin portal/config.php',
+];
+
+foreach ($candidates as $path) {
+    $tried[] = $path;
+    if (is_file($path)) {
+        require_once $path;
+        $loaded = true;
+        $loadedPath = $path;
+        break;
+    }
+}
+
+if (!$loaded) {
+    echo "<pre style='color:#fff;background:#b00020;padding:12px;border-radius:8px;white-space:pre-wrap'>
+Database config not found.
+Tried these paths:
+" . htmlspecialchars(implode("\n", $tried)) . "
+</pre>";
+    exit;
+}
+
+if (!isset($pdo) || !($pdo instanceof PDO)) {
+    echo "<pre style='color:#fff;background:#b00020;padding:12px;border-radius:8px'>
+Database connection (\$pdo) was not initialized by the loaded config.
+Loaded path:
+" . htmlspecialchars($loadedPath ?? '(unknown)') . "
+</pre>";
+    exit;
+}
+
+// TEMP: show where config was loaded from (helps confirm we’re good). Remove once working.
+echo "<div style='position:fixed;bottom:10px;right:10px;background:#073b4c;color:#bde0fe;padding:8px 10px;border-radius:8px;font:12px/1.2 monospace;opacity:.9'>
+Loaded config:<br>" . htmlspecialchars($loadedPath) . "</div>";
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Course Hub</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav>
+  <div class="logo">Student Course Hub</div>
+
+  <nav></nav>
+    <ul>
+      <li><a href="home.php">Home</a></li>
+      <li><a href="index.php">Programmes</a></li>
+      <li><a href="login.php">Login</a></li>
+      <li><a href="signup.php">Sign Up</a></li>
+    </ul>
+  </nav>
+
+  <div class="dropdown" id="loginMenu">
+    <button class="dropbtn" id="loginToggle">Login ▾</button>
+    <div class="dropdown-content" id="loginDropdown">
+      <a href="/Finalassignment/admin portal/adminlogin.php">Admin Login</a>
+      <a href="/Finalassignment/user/login.php">User Login</a>
+      <a href="/Finalassignment/user/signup.php">New User? Signup</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <h1 class="title">Available Programmes</h1>
+
+  <!-- Filter Section -->
+  <div class="filters">
+    <select id="levelFilter">
+      <option value="all">All Levels</option>
+      <option value="Undergraduate">Undergraduate</option>
+      <option value="Postgraduate">Postgraduate</option>
+    </select>
+
+    <input type="text" id="searchBar" placeholder="Search by keyword...">
+  </div>
+
+  <!-- Programmes Container (filled by JS) -->
+  <div id="programmeContainer" class="programme-list"></div>
+</main>
+
+<script src="assets/js/script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("loginToggle");
+  const dropdown = document.getElementById("loginDropdown");
+
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = dropdown.style.display === "block";
+    dropdown.style.display = isOpen ? "none" : "block";
+  });
+
+  document.addEventListener("click", () => {
+    dropdown.style.display = "none";
+  });
+});
+</script>
+
+</body>
+</html>

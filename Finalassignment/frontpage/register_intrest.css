@@ -1,0 +1,218 @@
+/* ==============================
+   RESET / BASE
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ==============================
+   PAGE BACKGROUND
+============================== */
+body {
+  min-height: 100vh;
+  background: linear-gradient(to right, #182848, #4b6cb7);
+  color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* ==============================
+   CARD WRAPPER
+============================== */
+.login-box {
+  width: 440px;
+  max-width: 95%;
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: 12px;
+  padding: 28px 24px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+  backdrop-filter: blur(12px);
+  animation: fadeIn .6s ease;
+}
+
+/* ==============================
+   HEADING
+============================== */
+.login-box h2 {
+  text-align: center;
+  margin: 6px 0 14px 0;
+  font-size: 2rem;
+  color: #f9f6f6;
+}
+
+/* Optional small line (Programme:) */
+.login-box .subtext {
+  text-align: center;
+  color: #dfe8ff;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+/* ==============================
+   MESSAGES
+============================== */
+.error,
+.success {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.error  { background: #e74c3c; color: #fff; }
+.success{ background: #2ecc71; color: #fff; }
+
+
+
+/* ==============================
+   FORM
+============================== */
+form {
+  width: 100%;
+  display: block;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  color: #f5f1f1;
+  margin: 6px 0 6px 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 15px;
+  transition: 0.25s ease;
+}
+
+input::placeholder { color: #e6e6e6; }
+
+input:focus {
+  outline: none;
+  border-color: #7fdfff;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 0 3px rgba(127, 223, 255, 0.15);
+}
+
+/* ==============================
+   SUBMIT BUTTON
+============================== */
+.btn,
+button,
+input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  border: 0;
+  border-radius: 8px;
+  background: #3498db;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s ease;
+  margin-top: 4px;
+}
+.btn:hover,
+button:hover,
+input[type="submit"]:hover {
+  background: #21618c;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+/* ==============================
+   FOOTER LINK (UNDER FORM)
+============================== */
+form p {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 12px;
+  color: #eaeaea;
+}
+form p a {
+  color: #bfeaff;
+  font-weight: 600;
+  text-decoration: none;
+}
+form p a:hover { text-decoration: underline; }
+
+/* ==============================
+   FANCY BACK BUTTON (fixed top-left)
+============================== */
+.back-btn{
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 1000;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 14px;
+  border-radius: 12px;
+
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: .2px;
+
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.28);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 26px rgba(0,0,0,.28);
+
+  transition: transform .15s ease, box-shadow .2s ease,
+              background .2s ease, border-color .2s ease;
+}
+.back-btn:hover{
+  background: rgba(255,255,255,.20);
+  border-color: rgba(255,255,255,.45);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(0,0,0,.35);
+}
+.back-btn:active{
+  transform: translateY(0);
+  box-shadow: 0 8px 20px rgba(0,0,0,.26);
+}
+.back-btn:focus{
+  outline: 2px solid #ffd166;
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px){
+  .back-btn{
+    top: 12px;
+    left: 12px;
+    padding: 9px 12px;
+    border-radius: 10px;
+  }
+}
+
+/* ==============================
+   ANIMATION + RESPONSIVE
+============================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .login-box { padding: 22px 18px; }
+  .login-box h2 { font-size: 1.7rem; }
+}

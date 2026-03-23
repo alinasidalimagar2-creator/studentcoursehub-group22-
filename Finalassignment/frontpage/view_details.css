@@ -1,0 +1,185 @@
+/* ==============================
+   RESET / BASE
+============================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root{
+  --bg1:#182848; --bg2:#4b6cb7; --text:#f0f0f0;
+  --card:#ffffff; --muted:#556; --muted2:#6c7a99;
+  --primary:#3498db; --primary-600:#21618c;
+  --outline:#d9ecff; --shadow:rgba(0,0,0,.28);
+  --glass: rgba(255,255,255,.10);
+}
+
+/* ==============================
+   PAGE BACKGROUND
+============================== */
+body{
+  min-height:100vh;
+  background: linear-gradient(to right, var(--bg1), var(--bg2));
+  color: var(--text);
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding: 80px 20px 40px; /* leave space for fixed back button */
+  font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+}
+
+/* ==============================
+   CONTAINER
+============================== */
+.wrap{
+  width:min(1000px, 92vw);
+}
+
+/* ==============================
+   FANCY BACK BUTTON (top-left)
+============================== */
+.back-btn{
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 1000;
+
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  padding:10px 14px;
+  border-radius: 12px;
+
+  color:#fff; text-decoration:none; font-weight:800; letter-spacing:.2px;
+  background: rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.28);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 26px var(--shadow);
+  transition: transform .15s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+}
+.back-btn:hover{
+  background: rgba(255,255,255,.20);
+  border-color: rgba(255,255,255,.45);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(0,0,0,.35);
+}
+.back-btn:active{ transform: translateY(0); }
+.back-btn:focus{ outline: 2px solid #ffd166; outline-offset: 2px; }
+
+/* ==============================
+   TITLE + META
+============================== */
+.title{
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: .3px;
+  margin-bottom: 6px;
+}
+.meta{
+  color: #e0e7ff;
+  opacity: .95;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* ==============================
+   CARD
+============================== */
+.card{
+  background: var(--glass);
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 14px 34px rgba(0,0,0,.30);
+  backdrop-filter: blur(12px);
+}
+
+.section-title{
+  color:#fff;
+  font-size: 1.1rem;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+.desc{
+  color: #f3f6ff;
+  line-height: 1.65;
+  font-weight: 500;
+  opacity: .95;
+}
+
+/* ==============================
+   MODULE LIST
+============================== */
+.module-list{
+  list-style:none;
+  margin-top: 8px;
+  display:grid;
+  gap: 10px;
+}
+.module-item{
+  background: rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+.module-name{
+  color:#fff; font-weight:800; letter-spacing:.2px; margin-bottom:4px;
+}
+.module-desc{
+  color:#e9f0ff; opacity:.9; line-height:1.55;
+}
+
+/* ==============================
+   ACTIONS (buttons)
+============================== */
+.actions{
+  margin-top: 16px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-decoration:none;
+  font-weight: 900;
+  letter-spacing: .2px;
+  transition: .2s ease, transform .05s ease;
+}
+.btn:active{ transform: scale(.99); }
+
+.btn-primary{
+  background: var(--primary);
+  color:#fff;
+  box-shadow: 0 10px 24px rgba(52,152,219,.35);
+  border: 1px solid rgba(255,255,255,.16);
+}
+.btn-primary:hover{ background: var(--primary-600); }
+
+.btn-outline{
+  color:#e2f2ff;
+  border:1px solid rgba(255,255,255,.35);
+  background: rgba(255,255,255,.08);
+  backdrop-filter: blur(8px);
+}
+.btn-outline:hover{
+  background: rgba(255,255,255,.16);
+}
+
+/* ==============================
+   EMPTY / MUTED TEXT
+============================== */
+.muted{ color:#e3e9ff; opacity:.9; }
+
+/* ==============================
+   RESPONSIVE TWEAKS
+============================== */
+@media (max-width: 520px){
+  .actions{ gap:8px; }
+  .btn{ width:100%; }
+}

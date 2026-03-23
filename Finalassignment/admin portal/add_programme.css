@@ -1,0 +1,289 @@
+/* ==============================
+   BODY
+============================== */
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to right, #182848, #4b6cb7);
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==============================
+   HEADER
+============================== */
+h2 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2rem;
+    color: #f9f6f6;
+    position: relative;
+    top: 0;
+}
+
+/* ==============================
+   Fancy Back Button
+============================== */
+a.back-btn {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 18px;
+    background: #3498db;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+a.back-btn:hover {
+    background: #21618c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* ==============================
+   FORM STYLING
+============================== */
+form {
+    width: 400px;
+    max-width: 90%;
+    margin: 100px auto 40px auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+}
+label {
+    font-weight: bold;
+    color: #f5f1f1;
+}
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+}
+textarea { resize: vertical; min-height: 110px; }
+
+input[readonly],
+textarea[readonly],
+select:disabled {
+    background-color: #f3f0f0;
+    color: #777;
+}
+
+/* ==============================
+   SELECT Dropdown with Visible Arrow
+============================== */
+select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff; /* solid for visibility */
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    /* show default dropdown arrow */
+    -webkit-appearance: menulist;
+    -moz-appearance: menulist;
+    appearance: menulist;
+
+    /* optional: custom arrow */
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23333'%3E%3Cpath d='M4 6l4 4 4-4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+select option {
+    background-color: #fff;
+    color: #333;
+}
+
+/* ==============================
+   BUTTONS
+============================== */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    background-color: #21618c;
+}
+
+/* Danger-styled delete button */
+button.delete,
+button.confirm-delete {
+    background-color: #e74c3c;
+}
+button.delete:hover,
+button.confirm-delete:hover {
+    background-color: #c0392b;
+}
+
+/* Optional secondary cancel button */
+button.btn-cancel {
+    background: transparent;
+    color: #f0f0f0;
+    border: 1px solid rgba(255,255,255,0.35);
+}
+button.btn-cancel:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+/* ==============================
+   MESSAGES (Success / Error)
+============================== */
+.success,
+.error,
+.notification {
+    width: 400px;
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Specific colors */
+.success,
+.notification.success {
+    background-color: #2ecc71;
+    color: #fff;
+}
+.error,
+.notification.error {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+/* ==============================
+   OPTIONAL CONFIRM UI (inline bar)
+============================== */
+.confirm-bar {
+    width: 400px;
+    max-width: 90%;
+    margin: 16px auto 0 auto;
+    padding: 14px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+}
+.confirm-bar .confirm-text {
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    color: #ffeaea;
+}
+.confirm-bar .confirm-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* ==============================
+   OPTIONAL CONFIRM MODAL
+   (toggle .confirm-overlay.show via JS)
+============================== */
+.confirm-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(2px);
+}
+.confirm-overlay.show { display: flex; }
+
+.confirm-modal {
+    width: min(480px, 92vw);
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 12px;
+    padding: 20px 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    color: #f0f0f0;
+}
+.confirm-modal h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+}
+.confirm-modal p {
+    margin: 0 0 16px 0;
+    color: #eaeaea;
+}
+.confirm-modal .confirm-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+.confirm-modal .btn-danger {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.confirm-modal .btn-danger:hover {
+    background-color: #c0392b;
+}
+.confirm-modal .btn-cancel {
+    background: transparent;
+    color: #f0f0f0;
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.confirm-modal .btn-cancel:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+/* ==============================
+   ACCESSIBILITY
+============================== */
+button:focus,
+a.back-btn:focus,
+button.confirm-delete:focus,
+button.btn-cancel:focus,
+.confirm-modal .btn-danger:focus,
+.confirm-modal .btn-cancel:focus {
+    outline: 2px solid #ffd166;
+    outline-offset: 2px;
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+@media screen and (max-width: 600px) {
+    form, .success, .error, .notification {
+        width: 90%;
+        padding: 20px;
+    }
+}

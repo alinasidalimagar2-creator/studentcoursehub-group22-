@@ -1,0 +1,151 @@
+/* ==============================
+   RESET / BASE
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ==============================
+   PAGE BACKGROUND
+============================== */
+body {
+  min-height: 100vh;
+  background: linear-gradient(to right, #d0840a, #4b6cb7);
+  color: #0a6573;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 35px;
+}
+
+/* ==============================
+   CARD WRAPPER
+============================== */
+.login-box {
+  width: 440px;
+  max-width: 95%;
+  background: rgba(179, 59, 59, 0.1);
+  border-radius: 12px;
+  padding: 28px 24px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+  backdrop-filter: blur(12px);
+  animation: fadeIn .6s ease;
+}
+
+/* ==============================
+   HEADING
+============================== */
+.login-box h2 {
+  text-align: center;
+  margin: 6px 0 14px 0;
+  font-size: 2rem;
+  color: #562626;
+}
+
+/* ==============================
+   MESSAGES
+============================== */
+.error,
+.success {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.error  { background: #e74c3c; color: #fff; }
+.success{ background: #1c8146; color: #fff; }
+
+/* ==============================
+   FORM
+============================== */
+form {
+  width: 100%;
+  display: block;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  color: #b8e81b;
+  margin: 6px 0 6px 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(18, 158, 218, 0.35);
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 15px;
+  transition: 0.25s ease;
+}
+
+input::placeholder { color: #e6e6e6; }
+
+input:focus {
+  outline: none;
+  border-color: #7fdfff;
+  background: rgba(216, 13, 13, 0.25);
+  box-shadow: 0 0 0 3px rgba(225, 5, 104, 0.15);
+}
+
+/* ==============================
+   SUBMIT BUTTON
+============================== */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: 0;
+  border-radius: 8px;
+  background: #3498db;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.25s ease;
+  margin-top: 5px;
+}
+.btn:hover {
+  background: #058d5b;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+/* ==============================
+   FOOTER LINK (UNDER FORM)
+============================== */
+form p {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 12px;
+  color: #d4129d;
+}
+form p a {
+  color: #133445;
+  font-weight: 500;
+  text-decoration: none;
+}
+form p a:hover { text-decoration: underline; }
+
+/* ==============================
+   ANIMATION + RESPONSIVE
+============================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .login-box { padding: 22px 18px; }
+  .login-box h2 { font-size: 1.7rem; }
+}
