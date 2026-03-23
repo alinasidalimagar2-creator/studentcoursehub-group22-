@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include 'config.php';
 
 // Check if staff is logged in
