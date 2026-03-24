@@ -114,9 +114,10 @@ try {
       <a href="dashboard.php" class="site-title">Student Course Hub</a>
     </div>
     <div class="header-right">
+      
       <a href="../frontpage/home.php" class="nav-link">Home</a>
-      <a href="logout.php" class="nav-link btn-logout">Logout</a>
-    </div>
+<a href="my_interests.php" class="nav-link">My Interests</a>
+<a href="logout.php" class="nav-link btn-logout">Logout</a>
   </div>
 </header>
 
