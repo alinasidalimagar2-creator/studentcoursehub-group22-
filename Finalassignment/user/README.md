@@ -141,5 +141,6 @@ It highlights practical skills in backend development, frontend design, and secu
 ## Author
 
 Student Course Hub Project
+
 Final Assignment
 
