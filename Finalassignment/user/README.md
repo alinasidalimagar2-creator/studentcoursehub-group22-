@@ -64,25 +64,25 @@ Finalassignment
 
 The `user` folder contains all functionality related to student interaction.
 
-1. dashboard.php
+1. dashboard.php: 
   Displays all available programmes and allows users to register or remove interest.
 
-2. login.php
+2. login.php:
   Handles user authentication using email and password.
 
-3. signup.php
+3. signup.php:
   Allows new users to create an account with validation.
 
-4. logout.php
+4. logout.php:
   Ends the user session securely.
 
-5. my_interests.php
+5. my_interests.php:
   Displays all programmes the user has selected.
 
-6. view_details.php
+6. view_details.php:
   Shows detailed information about a selected programme, including modules.
 
-7. CSS files
+7. CSS files:
   Provide styling and layout for the user interface.
 
 
