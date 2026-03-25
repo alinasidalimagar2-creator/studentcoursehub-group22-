@@ -2,7 +2,7 @@
 include 'config.php';
 include 'auth.php';
 
-// (Optional) role guard
+// (Optional) 
 // if (!in_array($_SESSION['user']['role'] ?? '', ['Admin','Staff'], true)) {
 //     http_response_code(403);
 //     exit('Forbidden');
