@@ -3,7 +3,7 @@
 include 'config.php';
 include 'auth.php';
 
-/* ------------------ ID VALIDATION ------------------ */
+/* ------------------ ID VALIDATION ---------------------- */
 $id = $_GET['id'] ?? null;
 $id = filter_var($id, FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]);
 if ($id === false) {
