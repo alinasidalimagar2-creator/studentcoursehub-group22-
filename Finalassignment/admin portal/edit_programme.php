@@ -18,7 +18,7 @@ if ($id) {
     $leader = $data['ProgrammeLeaderID'];
 }
 
-// Fetch dropdowns
+// Fetch dropdowns ..
 $levels = $pdo->query("SELECT * FROM Levels")->fetchAll(PDO::FETCH_ASSOC);
 $staff = $pdo->query("SELECT * FROM Staff")->fetchAll(PDO::FETCH_ASSOC);
 
