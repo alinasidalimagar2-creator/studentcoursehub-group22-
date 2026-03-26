@@ -42,7 +42,7 @@ try {
 
 <nav class="main-nav">
   <div class="logo">
-  <a href="/Finalassignment/frontpage/home.php">Home</a>
+  <a href="home.php">Home</a>
 </div>
 
   <div class="dropdown" id="loginMenu">
