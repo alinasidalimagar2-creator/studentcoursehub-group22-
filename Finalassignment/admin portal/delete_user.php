@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <script>
         function confirmDelete(e) {
             if (!confirm("Are you sure you want to delete this user? This action cannot be undone.")) {
-                e.preventDefault();
+                e.preventDefault(); // if user press cancel it stop form submission
             }
         }
     </script>
@@ -63,6 +63,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <a href="manage_user.php" class="back-btn">← Back</a>
 
+
+<!-- tell php to delte user -->
 <form method="POST">
     <label>User ID:</label>
     <input type="text" value="<?= htmlspecialchars($user['id']) ?>" readonly>
