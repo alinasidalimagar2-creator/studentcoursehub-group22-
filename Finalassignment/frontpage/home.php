@@ -386,7 +386,7 @@ unset($_SESSION['flash_success'], $_SESSION['flash_error']);
             }
 
             nav ul {
-                display: none; /* Hide on mobile, add JS toggle if needed */
+                display: none; 
             }
 
             .hero {
