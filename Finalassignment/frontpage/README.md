@@ -41,6 +41,7 @@ The navigation menu that appears on every page. Has links to:
 - Student/User Login
 - Staff Login
 - Admin Login
+- Sign Up
 
 ### fetch_programmes.php
 Returns programme data as JSON. Used for dynamic loading with AJAX.
