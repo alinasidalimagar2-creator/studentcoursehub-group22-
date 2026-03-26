@@ -5,7 +5,7 @@
 <header class="main-header">
   <div class="header-container">
     <div class="header-left">
-      <a href="home.php" class="brand-logo">🎓 Student Course Hub</a>
+      <a href="home.php" class="brand-logo"> Student Course Hub</a>
       <a href="home.php" class="nav-link active">Home</a>
     </div>
     <div class="header-right">
